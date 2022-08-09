@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { IoAirplaneSharp } from 'react-icons/io5';
 import { ThreeDots } from 'react-loader-spinner';
 
+import Header from "../../utils/Header";
 import Paragraph from '../../utils/Paragraph';
 import Button from '../../utils/Button';
 import Container from "./style";
@@ -41,10 +42,12 @@ function Home() {
 
     return (
         <Container>
-            <header>
-                <IoAirplaneSharp />
-                <Paragraph conteudo="MatchFlight" />
-            </header>
+            <Header conteudo={
+                <>
+                    <IoAirplaneSharp />
+                    <Paragraph conteudo="MatchFlight" />
+                </>
+            } />
             <div>
                 {
                     !loading.loadingCompany ? <Button conteudo="Para empresas" tipo="button"
