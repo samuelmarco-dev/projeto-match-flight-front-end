@@ -26,7 +26,7 @@ const Container = styled.section`
             color: #FFFFFF;
             font-size: 120px;
         }
-        
+
         p {
             width: 100%;
             height: 70px;
@@ -51,12 +51,12 @@ const Container = styled.section`
         justify-content: center;
         align-items: center;
         padding: 0 20px;
-        
+
         a {
             width: 100%;
             height: auto;
         }
-        
+
         button{
             width: 100%;
             height: 48px;
@@ -67,7 +67,7 @@ const Container = styled.section`
             line-height: 23px;
             color: #FFFFFF;
             margin-bottom: 15px;
-            box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.4)
+            box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.4);
         }
     }
 `;
