@@ -6,7 +6,6 @@ import { ThreeDots } from 'react-loader-spinner';
 import Paragraph from '../../utils/Paragraph';
 import Button from '../../utils/Button';
 import Container from "./style";
-import "../../assets/css/reset.css";
 
 function Home() {
     const navigate = useNavigate();
@@ -27,18 +26,18 @@ function Home() {
                 navigate(`/${page}`);
                 setDisable({ ...disable, disableUser: false })
                 setLoading({ ...loading, loadingUser: false })
-            }, 500);
+            }, 400);
         }
         if(page === 'company'){
             setDisable({ ...disable, disableCompany: true })
             setLoading({ ...loading, loadingCompany: true })
-            setInterval(()=> {  
+            setInterval(()=> {
                 navigate(`/${page}`);
                 setDisable({ ...disable, disableCompany: false })
                 setLoading({ ...loading, loadingCompany: false })
-            }, 500);
+            }, 400);
         }
-    }   
+    }
 
     return (
         <Container>
@@ -48,17 +47,17 @@ function Home() {
             </header>
             <div>
                 {
-                    !loading.loadingCompany ? <Button conteudo="Para empresas" tipo="button" 
-                    disabled={disable.disableCompany} click={()=> avancePage('company')} /> 
+                    !loading.loadingCompany ? <Button conteudo="Para empresas" tipo="button"
+                    disabled={disable.disableCompany} click={()=> avancePage('company')} />
                     :
-                    <Button conteudo={<ThreeDots color="#fff" height={13} />} tipo="button" 
+                    <Button conteudo={<ThreeDots color="#fff" height={13} />} tipo="button"
                     disabled={disable.disableCompany} />
                 }
                 {
-                    !loading.loadingUser ? <Button conteudo="Para usuários" tipo="button" 
-                    disabled={disable.disableUser} click={()=> avancePage('user')} /> 
+                    !loading.loadingUser ? <Button conteudo="Para usuários" tipo="button"
+                    disabled={disable.disableUser} click={()=> avancePage('user')} />
                     :
-                    <Button conteudo={<ThreeDots color="#fff" height={13} />} tipo="button" 
+                    <Button conteudo={<ThreeDots color="#fff" height={13} />} tipo="button"
                     disabled={disable.disableUser} />
                 }
             </div>
