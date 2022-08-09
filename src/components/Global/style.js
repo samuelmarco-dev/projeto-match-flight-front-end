@@ -64,7 +64,7 @@ const Container = styled.section`
 
         button {
             width: 100%;
-            height: 40px;
+            height: 44px;
             border-radius: 5px;
             font-weight: 700;
             font-size: 20px;
