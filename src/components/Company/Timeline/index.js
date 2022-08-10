@@ -1,22 +1,20 @@
-import { IoMdExit } from 'react-icons/io';
-
+import HeaderScreen from '../../Header';
+import ProposalTimeLine from '../../Proposal';
 import Container from "./style";
-import Profile from "../../../assets/img/profile.png";
+import Button from '../../../utils/Button';
 
 function TimelineCompany() {
     return (
         <Container>
-            <header>
-                <img src={Profile} alt="ImageProfile" />
-                <p>MatchFlight</p>
-                <IoMdExit />
-            </header>
+            <HeaderScreen />
             <h1>Propostas enviadas</h1>
             <div className='button'>
-                <button>Criar nova proposta</button>
+                <Button conteudo="Criar nova proposta" />
             </div>
             <nav>
-                algumas propostas...
+                <ProposalTimeLine />
+                <ProposalTimeLine />
+                <ProposalTimeLine />
             </nav>
         </Container>
     );

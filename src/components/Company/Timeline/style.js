@@ -7,10 +7,14 @@ const Container = styled.section`
     top: 0;
     left: 0;
     background-color: #00A7EE;
+    overflow-y: scroll;
 
     header {
         width: 100%;
         height: 10vh;
+        position: fixed;
+        top: 0;
+        left: 0;
         display: flex;
         justify-content: space-around;
         align-items: center;
@@ -49,12 +53,13 @@ const Container = styled.section`
         justify-content: flex-start;
         font-family: 'Saira Stencil One', cursive;
         align-items: center;
-        margin-top: 10%;
+        margin-top: calc(10vh + 8%);
         font-weight: 700;
         font-size: 26px;
         line-height: 18px;
         color: #FFFFFF;
         padding: 0 20px;
+        z-index: 5;
     }
 
     .button {
@@ -83,8 +88,63 @@ const Container = styled.section`
     }
 
     nav {
-        background-color: gray;
-        margin-top: 8%;
+        height: auto;
+        margin-top: 5%;
+        padding: 10px 0;
+
+        div {
+            width: 100%;
+            height: 70px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 10px;
+            padding: 0 10px;
+            margin-bottom: 10px;
+            background-color: #126BA5;
+
+            p {
+                line-height: 18px;
+                color: #FFFFFF;
+            }
+
+            img {
+                width: 50px;
+                height: 50px;
+            }
+
+            aside {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                align-items: center;
+
+                p {
+                    font-size: 20px;
+                    font-weight: 600;
+                }
+            }
+
+            article {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                align-items: center;
+
+                p {
+                    font-size: 18px;
+                    font-weight: 400;
+                }
+
+                svg {
+                    font-size: 18px;
+                    color: #FFFFFF;
+                }
+            }
+        }
     }
 `;
 
