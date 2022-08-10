@@ -20,7 +20,7 @@ function CompanyRegistration() {
                     <Button conteudo="Cadastrar" />
                 </div>
             </form>
-            <Paragraph conteudo="Alterar dados"/>
+            <Paragraph conteudo="Alterar dados da empresa"/>
         </Container>
     );
 }

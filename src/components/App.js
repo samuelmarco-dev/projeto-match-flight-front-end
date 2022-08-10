@@ -8,6 +8,8 @@ import LoginCompany from './Company/Login';
 import CompanyInformation from './Company/Information';
 import CompanyRegistration from './Company/Registration';
 import TimelineCompany from './Company/Timeline';
+import ProposalInformation from './ProposalScreen/Information';
+import ProposalCreate from './ProposalScreen/Registration';
 import '../assets/css/reset.css';
 
 function App() {
@@ -23,6 +25,8 @@ function App() {
                     <Route path='/company/information' element={<CompanyInformation />} />
                     <Route path='/company/sign-up' element={<CompanyRegistration />} />
                     <Route path='/company/timeline' element={<TimelineCompany />} />
+                    <Route path='/proposal/information' element={<ProposalInformation />} />
+                    <Route path='/proposal/sign-up' element={<ProposalCreate />} />
                 </Routes>
             </BrowserRouter>
     );
