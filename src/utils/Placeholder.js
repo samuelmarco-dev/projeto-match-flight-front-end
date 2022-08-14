@@ -16,5 +16,5 @@ export const arrayPlaceholderProposalInformation =
 export const arrayPlaceholderProposalCreate =
     [
         'Companhia Aérea - SIGLA', 'Aeroporto embarque - SIGLA', 'Aeroporto desembarque - SIGLA',
-        'Data de início', 'Data de fim'
+        'Data de início (00/00/0000)', 'Data de fim (00/00/0000)'
     ];

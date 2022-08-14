@@ -29,15 +29,15 @@ function CompanyInformation() {
     }
 
     function verifyTypeCompany(){
-        if (dataCompany.type === ('Viagens' || 'TravelAgency')) {
+        if (dataCompany.type === 'Viagens' || dataCompany.type === 'TravelAgency') {
             setDataCompany({...dataCompany, type: 'TravelAgency'});
             return avancePage();
         }
-        if (dataCompany.type === ('Intercâmbio' || 'ExchangeAgency')) {
+        if (dataCompany.type === 'Intercâmbio' || dataCompany.type === 'ExchangeAgency') {
             setDataCompany({...dataCompany, type: 'ExchangeAgency'});
             return avancePage();
         }
-        if (dataCompany.type === ('Ambos' || 'TravelAndExchangeAgency')) {
+        if (dataCompany.type === 'Ambos' || dataCompany.type === 'TravelAndExchangeAgency') {
             setDataCompany({...dataCompany, type: 'TravelAndExchangeAgency'});
             return avancePage();
         }
@@ -68,10 +68,9 @@ function CompanyInformation() {
             setDataCompany({ ...dataCompany, type: '' });
             return;
         }
+
         verifyTypeCompany();
     }
-
-    console.log(dataCompany);
 
     return (
         <Container>

@@ -85,8 +85,6 @@ function LoginCompany() {
         await sendLoginCompany();
     }
 
-    console.log(login);
-
     return (
         <Container>
             <Header conteudo="MatchFlight" />

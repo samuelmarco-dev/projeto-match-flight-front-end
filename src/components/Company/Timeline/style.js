@@ -62,6 +62,10 @@ const Container = styled.section`
         z-index: 5;
     }
 
+    a {
+        width: 100%;
+    }
+
     .button {
         width: 100%;
         height: 50px;
