@@ -52,6 +52,7 @@ const Container = styled.section`
             color: rgb(75,75,80);
             text-align: left;
             border: none;
+            background-color: #FFFFFF;
         }
     }
 

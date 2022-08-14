@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import Header from "../../../utils/Header";
 import Button from "../../../utils/Button";
 import Paragraph from "../../../utils/Paragraph";
@@ -17,7 +19,9 @@ function LoginUser() {
                     <Button conteudo="Entrar" tipo="submit" />
                 </div>
             </form>
-            <Paragraph conteudo="Primeira vez? Cadastre-se" />
+            <Link to='/user/sign-up'>
+                <Paragraph conteudo="Primeira vez? Cadastre-se" />
+            </Link>
         </Container>
     );
 }
