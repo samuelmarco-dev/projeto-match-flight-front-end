@@ -34,6 +34,9 @@ function TimelineCompany() {
                 icon: 'error',
                 text: err.response.data,
             });
+            localStorage.removeItem('token');
+            localStorage.removeItem('companyId');
+            navigate('/company');
         }
     }
 
@@ -75,10 +78,15 @@ function TimelineCompany() {
             </div>
             <nav>
                 {
-                    !proposals.length ?
-                    <></>
+                    !proposals.length ? <></>
                     :
-                    <ProposalTimeLine />
+                    proposals.map(proposal => {
+                        const { id, destiny, year, Boarding, Landing, Date } = proposal;
+                        return (
+                            <ProposalTimeLine key={id} destiny={destiny} year={year}
+                            boarding={Boarding} landing={Landing} date={Date} />
+                        );
+                    })
                 }
             </nav>
         </Container>
