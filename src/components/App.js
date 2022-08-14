@@ -1,4 +1,7 @@
+import { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+import ContextSignupCompany from '../api/context/signupCompany';
 
 import Home from './Home';
 import LoginUser from './User/Login';
@@ -13,8 +16,12 @@ import ProposalCreate from './ProposalScreen/Registration';
 import '../assets/css/reset.css';
 
 function App() {
+    const [dataCompany, setDataCompany] = useState({
+        name: '', city: '', state: '', type: '', cnpj: '', url: '', email: '', password: '', confirmPassword: ''
+    });
 
     return (
+        <ContextSignupCompany.Provider value={{ dataCompany, setDataCompany }}>
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<Home />} />
@@ -29,6 +36,7 @@ function App() {
                     <Route path='/proposal/sign-up' element={<ProposalCreate />} />
                 </Routes>
             </BrowserRouter>
+        </ContextSignupCompany.Provider>
     );
 }
 

@@ -27,9 +27,10 @@ function UserRegistration() {
     }
 
     function verifyData(){
-        for (let key in signupData){
-            if (signupData[key].includes(' ')) return true;
-        }
+        if (signupData.url.includes(' ')) return true;
+        if (signupData.email.includes(' ')) return true;
+        if (signupData.password.includes(' ')) return true;
+        if (signupData.confirmPassword.includes(' ')) return true;
         return false;
     }
 
@@ -43,7 +44,7 @@ function UserRegistration() {
             setLoading(false);
             setDisabled(false);
             Swal.close();
-        }, 1500);
+        }, 2000);
     }
 
     async function registrationUser(){
@@ -59,7 +60,7 @@ function UserRegistration() {
                 setLoading(false);
                 clearForm();
                 navigate('/user');
-            }, 1500);
+            }, 1800);
         }
         catch(err){
             Swal.fire({
@@ -67,6 +68,7 @@ function UserRegistration() {
                 icon: 'error'
             });
             executeTimeOut();
+            clearForm();
         }
     }
 
@@ -83,6 +85,7 @@ function UserRegistration() {
             });
             executeTimeOut();
             setSignupData({ ...signupData, password: '', confirmPassword: '' });
+            return;
         }
 
         if (verifyData()) {
@@ -93,6 +96,7 @@ function UserRegistration() {
             });
             executeTimeOut();
             clearForm();
+            return;
         }
 
         await registrationUser();
