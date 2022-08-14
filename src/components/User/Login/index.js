@@ -56,10 +56,11 @@ function LoginUser() {
             executeTimeOut();
             clearForm();
             navigate('/user/timeline');
-        } catch (error) {
+        } catch (err) {
             Swal.fire({
                 title: 'Erro ao fazer login',
-                icon: 'error'
+                icon: 'error',
+                text: err.response.data
             });
             executeTimeOut();
             clearForm();

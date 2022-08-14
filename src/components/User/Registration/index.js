@@ -53,19 +53,16 @@ function UserRegistration() {
             Swal.fire({
                 title: 'Cadastro realizado com sucesso!',
                 icon: 'success',
-                timer: 1500
             });
-            setTimeout(()=> {
-                setDisabled(false);
-                setLoading(false);
-                clearForm();
-                navigate('/user');
-            }, 1800);
+            executeTimeOut();
+            clearForm();
+            navigate('/user');
         }
         catch(err){
             Swal.fire({
                 title: 'Erro ao realizar o cadastro!',
-                icon: 'error'
+                icon: 'error',
+                text: err.response.data
             });
             executeTimeOut();
             clearForm();

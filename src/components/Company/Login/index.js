@@ -46,7 +46,6 @@ function LoginCompany() {
         try {
             const promise = await axios.post(`${server}/company/sign-in`, login);
             const { data } = promise;
-            console.log(data);
             setTokenCompany(data.token);
             localStorage.setItem('token', data.token);
             localStorage.setItem('companyId', data.companyId);
@@ -57,11 +56,11 @@ function LoginCompany() {
             executeTimeOut();
             clearForm();
             navigate('/company/timeline');
-        } catch (error) {
+        } catch (err) {
             Swal.fire({
                 title: 'Erro ao fazer login',
                 icon: 'error',
-                text: error.response.data
+                text: err.response.data
             });
             executeTimeOut();
             clearForm();

@@ -65,19 +65,16 @@ function CompanyRegistration() {
             await axios.post(`${server}/company/sign-up`, dataCompany);
             Swal.fire({
                 title: 'Cadastro realizado com sucesso!',
-                icon: 'success',
-                timer: 1500
+                icon: 'success'
             });
-            setTimeout(()=> {
-                setDisabled(false);
-                setLoading(false);
-                clearForm();
-                navigate('/company');
-            } , 1800);
-        } catch (error) {
+            executeTimeOut();
+            clearForm();
+            navigate('/company');
+        } catch (err) {
             Swal.fire({
                 title: 'Erro ao realizar o cadastro!',
-                icon: 'error'
+                icon: 'error',
+                text: err.response.data
             });
             executeTimeOut();
             clearForm();
@@ -123,8 +120,6 @@ function CompanyRegistration() {
 
         await registrationCompany();
     }
-
-    console.log(dataCompany);
 
     return (
         <Container>
