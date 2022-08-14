@@ -140,10 +140,10 @@ function CompanyRegistration() {
                     <input type="text" placeholder={arrayPlaceholderSignUpCompany[2]}
                     value={dataCompany.email} required disabled={disabled}
                     onChange={(e)=> setDataCompany({ ...dataCompany, email: e.target.value})} />
-                    <input type="text" placeholder={arrayPlaceholderSignUpCompany[3]}
+                    <input type="password" placeholder={arrayPlaceholderSignUpCompany[3]}
                     value={dataCompany.password} required disabled={disabled}
                     onChange={(e)=> setDataCompany({ ...dataCompany, password: e.target.value})} />
-                    <input type="text" placeholder={arrayPlaceholderSignUpCompany[4]}
+                    <input type="password" placeholder={arrayPlaceholderSignUpCompany[4]}
                     value={dataCompany.confirmPassword} required disabled={disabled}
                     onChange={(e)=> setDataCompany({ ...dataCompany, confirmPassword: e.target.value})} />
                 </div>

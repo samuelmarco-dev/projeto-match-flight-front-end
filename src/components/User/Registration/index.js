@@ -116,10 +116,10 @@ function UserRegistration() {
                     <input type="text" placeholder={arrayPlaceholderSignUpUser[2]}
                     value={signupData.email} required disabled={disabled}
                     onChange={(e)=> setSignupData({ ...signupData, email: e.target.value })} />
-                    <input type="text" placeholder={arrayPlaceholderSignUpUser[3]}
+                    <input type="password" placeholder={arrayPlaceholderSignUpUser[3]}
                     value={signupData.password} required disabled={disabled}
                     onChange={(e)=> setSignupData({ ...signupData, password: e.target.value })} />
-                    <input type="text" placeholder={arrayPlaceholderSignUpUser[4]}
+                    <input type="password" placeholder={arrayPlaceholderSignUpUser[4]}
                     value={signupData.confirmPassword} required disabled={disabled}
                     onChange={(e)=> setSignupData({ ...signupData, confirmPassword: e.target.value })} />
                 </div>
