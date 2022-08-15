@@ -1,19 +1,21 @@
 import Paragraph from "../../utils/Paragraph";
 
-function ProposalMain() {
+function ProposalMain(props) {
+    const { destiny, year, boarding, landing, date, image, airline } = props;
+
     return (
         <>
-            <img src="https://images.unsplash.com/photo-1610135241972-2086ecaf65d5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt="ImageMain" />
+            <img src={image.url} alt="ImageMain" />
             <nav>
-                <h1>São Paulo, 2022</h1>
+                <h1>{`${destiny}, ${year}`}</h1>
                 <div>
                     <strong>Companhia Aérea:</strong>
-                    <Paragraph conteudo="Azul Linhas Aéreas (AD)" />
-                    <Paragraph conteudo="Data: 09/11 a 14/12" />
+                    <Paragraph conteudo={`${airline.name} (${airline.initials})`} />
+                    <Paragraph conteudo={`Data: ${date.start.slice(0, 5)} a ${date.end.slice(0, 5)}`} />
                     <strong>Embarque:</strong>
-                    <Paragraph conteudo="Aeroporto de Porto Alegre (POA)" />
+                    <Paragraph conteudo={`${boarding.name} (${boarding.initials})`} />
                     <strong>Desembarque:</strong>
-                    <Paragraph conteudo="Aeroporto de Congonhas (CNH)" />
+                    <Paragraph conteudo={`${landing.name} (${landing.initials})`} />
                 </div>
             </nav>
         </>

@@ -1,13 +1,18 @@
 import { IoMdExit } from "react-icons/io";
-
-import Profile from "../../assets/img/profile.png";
+import { IoAirplaneSharp } from "react-icons/io5";
+import { useNavigate } from 'react-router-dom';
 
 function HeaderScreen() {
+    const navigate = useNavigate();
+
     return (
         <header>
-            <img src={Profile} alt="ImageProfile" />
+            <IoAirplaneSharp />
             <p>MatchFlight</p>
-            <IoMdExit />
+            <IoMdExit onClick={()=> {
+                localStorage.clear();
+                navigate('/');
+            }}/>
     </header>
     );
 }

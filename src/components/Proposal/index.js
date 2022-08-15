@@ -1,13 +1,11 @@
 import { BsArrowDownUp } from "react-icons/bs";
 
-import Profile from "../../assets/img/profile.png";
-
 function ProposalTimeLine(props) {
-    const { destiny, year, boarding, landing, date } = props;
+    const { destiny, year, boarding, landing, date, image } = props;
 
     return (
         <div>
-            <img src={Profile} alt="ImageProfile" />
+            <img src={image.url} alt="" />
             <aside>
                 <p>{`${destiny}, ${year}`}</p>
                 <p>{`Data: ${date.start.slice(0, 5)} a ${date.end.slice(0, 5)}`}</p>

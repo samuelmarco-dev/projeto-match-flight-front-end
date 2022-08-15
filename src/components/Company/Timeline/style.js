@@ -41,7 +41,7 @@ const Container = styled.section`
 
         svg {
             height: 100%;
-            font-size: 32px;
+            font-size: 36px;
             color: #FFFFFF;
         }
     }
@@ -116,6 +116,7 @@ const Container = styled.section`
             img {
                 width: 50px;
                 height: 50px;
+                border-radius: 50%;
             }
 
             aside {

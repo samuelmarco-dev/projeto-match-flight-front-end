@@ -55,7 +55,6 @@ function LoginCompany() {
             });
             executeTimeOut();
             clearForm();
-            navigate('/company/timeline');
         } catch (err) {
             Swal.fire({
                 title: 'Erro ao fazer login',
@@ -83,6 +82,7 @@ function LoginCompany() {
         }
 
         await sendLoginCompany();
+        navigate('/company/timeline');
     }
 
     return (

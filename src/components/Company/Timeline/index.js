@@ -26,7 +26,6 @@ function TimelineCompany() {
         try {
             const promise = await axios.get(`${server}/proposals/company/${localStorage.getItem('companyId')}`, objBody);
             const { data } = promise;
-            console.log(data, data.proposals);
             setProposals(data.proposals);
         } catch (err) {
             Swal.fire({
@@ -61,11 +60,17 @@ function TimelineCompany() {
             return;
         }
 
-        getProposalsCompany();
+        if(tokenCompany || localStorage.getItem('token')){
+            getProposalsCompany();
+        }
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
-    console.log(proposals);
+    if(tokenCompany || localStorage.getItem('token')){
+        setInterval(()=> {
+            getProposalsCompany();
+        }, 50000);
+    }
 
     return (
         <Container>
@@ -81,10 +86,10 @@ function TimelineCompany() {
                     !proposals.length ? <></>
                     :
                     proposals.map(proposal => {
-                        const { id, destiny, year, Boarding, Landing, Date } = proposal;
+                        const { id, destiny, year, Boarding, Landing, Date, Image } = proposal;
                         return (
-                            <ProposalTimeLine key={id} destiny={destiny} year={year}
-                            boarding={Boarding} landing={Landing} date={Date} />
+                            <ProposalTimeLine key={id} destiny={destiny} year={year} date={Date}
+                            boarding={Boarding} landing={Landing} image={Image}/>
                         );
                     })
                 }
