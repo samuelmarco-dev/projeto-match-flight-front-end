@@ -106,7 +106,7 @@ function TimelineUser() {
         const existRender = proposals.filter(proposal => proposal.render === true);
         if(existRender.length === 0){
             Swal.fire({
-                icon: 'loading',
+                icon: 'info',
                 title: 'Não há propostas para serem exibidas curtidas ou desmarcadas!'
             });
             return;
