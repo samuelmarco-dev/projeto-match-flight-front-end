@@ -23,3 +23,15 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add("resetUsers", () => {
+    cy.request("POST", "http://localhost:5000/user/reset", { });
+});
+
+Cypress.Commands.add("resetCompanies", ()=> {
+    cy.request("POST", "http://localhost:5000/company/reset", { });
+});
+
+Cypress.Commands.add("resetProposals", ()=> {
+    cy.request("POST", "http://localhost:5000/proposal/reset", { });
+});

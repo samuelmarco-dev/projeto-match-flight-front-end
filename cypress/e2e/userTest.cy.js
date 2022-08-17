@@ -7,6 +7,10 @@ const URL = "http://localhost:3000";
 const email = faker.internet.email();
 const password = faker.internet.password();
 
+before(() => {
+    cy.resetUsers();
+});
+
 describe("User Test", () => {
     it('should create a new user', () => {
         const user = userFactory.generateUser(email, password);
@@ -34,8 +38,6 @@ describe("User Test", () => {
         cy.visit(`${URL}`);
         cy.contains('Para usuários').click();
         cy.url().should('equal', `${URL}/user`);
-
-        cy.contains('Entrar').get('button[type=submit]').click();
 
         cy.get('input[type="text"] placeholder="E-mail"').type(email);
         cy.get('input[type="password"] placeholder="Senha"').type(password);

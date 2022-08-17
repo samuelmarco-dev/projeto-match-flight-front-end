@@ -6,6 +6,11 @@ const URL = "http://localhost:3000";
 const email = faker.internet.email();
 const password = faker.internet.password();
 
+before(()=> {
+    cy.resetCompanies();
+    cy.resetProposals();
+});
+
 describe("Company Test", () => {
     it("should create a new company", () => {
         const company = companyFactory.generateCompany(email, password);
@@ -34,5 +39,20 @@ describe("Company Test", () => {
         cy.wait('@createCompany');
 
         cy.url().should('equal', `${URL}/company`);
+    });
+
+    it("should login a company", () => {
+        cy.visit(`${URL}`);
+        cy.contains("Para empresas").click();
+        cy.url().should('equal', `${URL}/company`);
+
+        cy.get('input[type="text"] placeholder="E-mail"').type(email);
+        cy.get('input[type="password"] placeholder="Senha"').type(password);
+
+        cy.intercept('POST', '/company/sign-in').as('loginCompany');
+        cy.contains('Entrar').get('button[type="submit"]').click();
+        cy.wait('@loginCompany');
+
+        cy.url().should('equal', `${URL}/company/timeline`);
     });
 });

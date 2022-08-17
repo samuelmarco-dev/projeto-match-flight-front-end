@@ -27,7 +27,7 @@ function Home() {
                 navigate(`/${page}`);
                 setDisable({ ...disable, disableUser: false })
                 setLoading({ ...loading, loadingUser: false })
-            }, 400);
+            }, 500);
         }
         if(page === 'company'){
             setDisable({ ...disable, disableCompany: true })
@@ -36,7 +36,7 @@ function Home() {
                 navigate(`/${page}`);
                 setDisable({ ...disable, disableCompany: false })
                 setLoading({ ...loading, loadingCompany: false })
-            }, 400);
+            }, 500);
         }
     }
 
